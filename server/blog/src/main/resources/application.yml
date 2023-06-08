@@ -1,0 +1,45 @@
+# 应用服务 WEB 访问端口
+server:
+  port: 8080
+
+spring:
+  application:
+    name: blog
+  data:
+    mongodb:
+      uri: mongodb://root:123456@localhost:27017/blog?authSource=admin
+    redis:
+      # 地址
+      host: 127.0.0.1
+      # 端口，默认为6379
+      port: 6379
+      # 数据库索引
+      database: 0
+      # 密码
+      password:
+      # 连接超时时间
+      timeout: 10s
+      lettuce:
+        pool:
+          # 连接池中的最小空闲连接
+          min-idle: 0
+          # 连接池中的最大空闲连接
+          max-idle: 8
+          # 连接池的最大数据库连接数
+          max-active: 8
+          # #连接池最大阻塞等待时间（使用负值表示没有限制）
+          max-wait: -1ms
+# /api-docs endpoint custom path
+#springdoc:
+#  api-docs:
+#    path: /api-docs
+
+# token配置
+token:
+  # 令牌自定义标识
+  header: Authorization
+  # 令牌密钥
+  publicKey: MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCVbWKrLlHseU9Su+BEoKkmYa9EuE/J2Ba10AArpza9IogjkGP+tT5IgZ4myVyoN8NdCTpRrf3FA9vnaqI+CfysztdL9TZTRXHGwVidwvT/5J0qmdUHMETAYmzdqhYyey2OQI1KIKJIkf9R8qzDTWrSiP4ZvavykV+97Mmc1S94LQIDAQAB
+  privateKey: MIICdgIBADANBgkqhkiG9w0BAQEFAASCAmAwggJcAgEAAoGBAJVtYqsuUex5T1K74ESgqSZhr0S4T8nYFrXQACunNr0iiCOQY/61PkiBnibJXKg3w10JOlGt/cUD2+dqoj4J/KzO10v1NlNFccbBWJ3C9P/knSqZ1QcwRMBibN2qFjJ7LY5AjUogokiR/1HyrMNNatKI/hm9q/KRX73syZzVL3gtAgMBAAECgYAGulPWtsFwBv88D6L3nA85n+zTCIRpJ15QZdLYJFF53w/noATsjy8EdzeOcgMGvOoCKpvyWQXjxLp2Ny4iYnM6p/wYH5kk0+QgdYSSGUKM1YoygxH9k144Xacz3+iKpjuPNFWs7SRvDXposrgwpcl5fl9R/UQREK4efvUqlYlwYQJBAM2W/HG29OdATHWgmRSs73z13O7bdokoK+aXeUmBoegI2tIsWf+aboEB+hDC6OafgCfAUGqienmTop7Fz0yVw00CQQC6EQo+IiHfh/djP842MjFoikG8t3Fuq/3iLg5TZoNdI+zwX6hJsFFz1OCUYjKMnCUKZDXZxEXcTxhp1AoHhlhhAkEAmFhuMQXWbRakkfWz+jI8NWkrkoRmTjTKc1GDuwiopX0KSfw7pMEXadnBKHKGi39eRBaqgJpuD3FrbCRA/QttcQJAKZKzGizgKqSjhr5z4bIXTgdOJs9J/fNZ15Z4xvOpuD7VquOEo2pM2Legsia6qqYctJStX4m2HkJh7wtcbk/7IQJARd9GGJVHgyjyPSZhe4lGuUs777aDEyeORCXc5AQtMKh2QEqbqM/7jcbl/4H5Ge3SfJy1tAp9WZIdn6CaRmggcg==
+  # 令牌有效期（默认30分钟）
+  expireTime: 30

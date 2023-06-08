@@ -1,0 +1,66 @@
+name: blog
+version: 1.0.0+1
+publish_to: none
+description: A new Flutter project.
+environment: 
+  sdk: '>=2.19.4 <3.0.0'
+
+dependencies:
+  #flutter
+  flutter: 
+    sdk: flutter
+  #flutter多语言
+  flutter_localizations:
+    sdk: flutter
+
+  #getx状态管理，路由管理
+  get: 4.6.5
+  #dio网络请求
+  dio: ^4.0.4
+  #轮播图
+  carousel_slider: ^4.2.1
+  #一堆图标
+  icons_plus: ^4.0.0
+  #设备信息
+  package_info_plus: ^4.0.2
+  #key-value存储
+  shared_preferences: ^2.1.1
+
+#  不同屏幕大小适配
+  flutter_screenutil: ^5.7.0
+#  原生启动页
+  flutter_native_splash: ^2.2.19
+#  第三方组件库
+  getwidget: ^3.1.1
+  extended_image: ^8.0.2
+  flutter_svg: ^2.0.5
+  badges: ^3.1.1
+  #加载时动画
+  flutter_easyloading: 3.0.5
+#第三方导航栏
+  salomon_bottom_bar: ^3.3.2
+#  第三方介绍页
+  introduction_screen: ^3.1.8
+  dots_indicator: ^2.1.1
+#  第三方登录页
+  flutter_login: ^4.1.1
+#  图标库
+  font_awesome_flutter: ^10.4.0
+  line_icons: ^2.0.1
+  cupertino_icons: ^1.0.2
+# 设备启动图
+flutter_native_splash:
+  color: "#ffffff"
+
+dev_dependencies: 
+  flutter_lints: ^2.0.0
+  flutter_test: 
+    sdk: flutter
+
+
+
+flutter: 
+  uses-material-design: true
+  assets:
+    - assets/images/
+    - assets/svgs/
