@@ -56,6 +56,8 @@ public class ControllerMethodFactory implements MethodSpecFactory{
                 .addModifiers(Modifier.PUBLIC)
                 .returns(resultObj)
                 .addParameter(ParameterSpec.builder(entityClass,parameter)
+                        .addAnnotation(AnnotationSpec.builder(RequestBody.class)
+                                .build())
                         .build())
                 .addStatement("return $L.$L($L)",serviceName,name,parameter)
                 .build();

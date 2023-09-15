@@ -2,7 +2,7 @@ package fun.luink.blog.business.article.service.impl;
 
 import fun.luink.blog.business.article.repository.ArticleRepository;
 import fun.luink.blog.business.article.service.ArticleService;
-import fun.luink.blog.common.model.ResultObj;
+import fun.luink.blog.common.model.R;
 import fun.luink.blog.model.Article;
 import java.lang.Override;
 import java.lang.String;
@@ -17,30 +17,30 @@ public class ArticleServiceImpl implements ArticleService {
   ArticleRepository articleRepository;
 
   @Override
-  public ResultObj getArticle(String id) {
-    return ResultObj.success(articleRepository.findById(id));
+  public R getArticle(String id) {
+    return R.success(articleRepository.findById(id));
   }
 
   @Override
-  public ResultObj addArticle(Article article) {
+  public R addArticle(Article article) {
     Article save = articleRepository.insert(article);
-    return ResultObj.success(save);
+    return R.success(save);
   }
 
   @Override
-  public ResultObj updateArticle(Article article) {
+  public R updateArticle(Article article) {
     Article save = articleRepository.save(article);
-    return ResultObj.success(save);
+    return R.success(save);
   }
 
   @Override
-  public ResultObj delArticle(List<String> ids) {
+  public R delArticle(List<String> ids) {
     articleRepository.deleteAllById(ids);
-    return ResultObj.success();
+    return R.success();
   }
 
   @Override
-  public ResultObj getArticleList(Article article) {
-    return ResultObj.success(articleRepository.findAll(Example.of(article)));
+  public R getArticleList(Article article) {
+    return R.success(articleRepository.findAll(Example.of(article)));
   }
 }

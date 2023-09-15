@@ -43,6 +43,7 @@ public class SecurityConfig{
                 .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
                 .authorizeHttpRequests().requestMatchers(
                         "/auth/**",
+                        "/i18n/getLocaleKeysMap/**",
                         "/swagger-ui/index.html",
                         "/swagger-ui.html",
                         "/swagger-ui/**",

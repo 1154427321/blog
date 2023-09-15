@@ -1,6 +1,6 @@
 package fun.luink.blog.system.controller;
 
-import fun.luink.blog.common.model.ResultObj;
+import fun.luink.blog.common.model.R;
 import fun.luink.blog.model.Dict;
 import fun.luink.blog.system.service.DictService;
 
@@ -27,31 +27,31 @@ public class DictController {
 
     @GetMapping("/getDict/{id}")
     @Operation(summary = "获取字典", description = "获取字典")
-    public ResultObj getDict(@PathVariable("id") String id) {
+    public R getDict(@PathVariable("id") String id) {
         return dictService.getDict(id);
     }
 
     @PutMapping("/addDict")
     @Operation(summary = "添加字典", description = "添加字典")
-    public ResultObj addDict(Dict dict) {
+    public R addDict(Dict dict) {
         return dictService.addDict(dict);
     }
 
     @PutMapping("/updateDict")
     @Operation(summary = "更新字典", description = "更新字典")
-    public ResultObj updateDict(Dict dict) {
+    public R updateDict(Dict dict) {
         return dictService.updateDict(dict);
     }
 
     @DeleteMapping("/delDict")
     @Operation(summary = "删除字典", description = "删除字典")
-    public ResultObj delDict(List<String> dict) {
+    public R delDict(List<String> dict) {
         return dictService.delDict(dict);
     }
 
     @PostMapping("/getDictList")
     @Operation(summary = "获取字典列表", description = "获取字典列表")
-    public ResultObj getDictList(Dict dict) {
+    public R getDictList(Dict dict) {
         return dictService.getDictList(dict);
     }
 }

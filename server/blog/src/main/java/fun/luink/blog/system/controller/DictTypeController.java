@@ -1,6 +1,6 @@
 package fun.luink.blog.system.controller;
 
-import fun.luink.blog.common.model.ResultObj;
+import fun.luink.blog.common.model.R;
 import fun.luink.blog.model.DictType;
 import fun.luink.blog.system.service.DictTypeService;
 import java.lang.String;
@@ -26,31 +26,31 @@ public class DictTypeController {
 
   @GetMapping("/getDictType/{id}")
   @Operation(summary = "获取字典类型", description = "获取字典类型")
-  public ResultObj getDictType(@PathVariable("id") String id) {
+  public R getDictType(@PathVariable("id") String id) {
     return dictTypeService.getDictType(id);
   }
 
   @PutMapping("/addDictType")
     @Operation(summary = "添加字典类型", description = "添加字典类型")
-  public ResultObj addDictType(DictType dictType) {
+  public R addDictType(DictType dictType) {
     return dictTypeService.addDictType(dictType);
   }
 
   @PutMapping("/updateDictType")
     @Operation(summary = "更新字典类型", description = "更新字典类型")
-  public ResultObj updateDictType(DictType dictType) {
+  public R updateDictType(DictType dictType) {
     return dictTypeService.updateDictType(dictType);
   }
 
   @DeleteMapping("/delDictType")
     @Operation(summary = "删除字典类型", description = "删除字典类型")
-  public ResultObj delDictType(List<String> dictType) {
+  public R delDictType(List<String> dictType) {
     return dictTypeService.delDictType(dictType);
   }
 
   @PostMapping("/getDictTypeList")
     @Operation(summary = "获取字典类型列表", description = "获取字典类型列表")
-  public ResultObj getDictTypeList(DictType dictType) {
+  public R getDictTypeList(DictType dictType) {
     return dictTypeService.getDictTypeList(dictType);
   }
 }

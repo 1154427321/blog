@@ -1,7 +1,7 @@
 package fun.luink.blog.system.service;
 
 
-import fun.luink.blog.common.model.ResultObj;
+import fun.luink.blog.common.model.R;
 import fun.luink.blog.model.UserInfo;
 
 /**
@@ -9,7 +9,7 @@ import fun.luink.blog.model.UserInfo;
  */
 public interface AuthService {
 
-    ResultObj accountLogin(UserInfo userInfo);
+    R accountLogin(UserInfo userInfo);
 
-    ResultObj accountRegister(UserInfo userInfo);
+    R accountRegister(UserInfo userInfo);
 }

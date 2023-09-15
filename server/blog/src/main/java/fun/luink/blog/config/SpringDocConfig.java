@@ -42,6 +42,7 @@ public class SpringDocConfig {
                 .externalDocs(new ExternalDocumentation()
                         .description("SpringDoc Wiki Documentation")
                         .url("https://springdoc.org/v2"));
+
     }
 
 }

@@ -1,6 +1,6 @@
 package fun.luink.blog.system.controller;
 
-import fun.luink.blog.common.model.ResultObj;
+import fun.luink.blog.common.model.R;
 import fun.luink.blog.model.UserInfo;
 import fun.luink.blog.system.service.AuthService;
 import io.swagger.v3.oas.annotations.Operation;
@@ -29,7 +29,7 @@ public class AuthController {
      */
     @Operation(summary = "登录",description = "账号登录接口")
     @PostMapping("accountLogin")
-    public ResultObj accountLogin(@RequestBody UserInfo userInfo){
+    public R accountLogin(@RequestBody UserInfo userInfo){
 
 
         return authService.accountLogin(userInfo);
@@ -42,7 +42,7 @@ public class AuthController {
      */
     @Operation(summary = "注册",description = "账号注册接口")
     @PostMapping("accountRegister")
-    public ResultObj accountRegister(@RequestBody UserInfo userInfo){
+    public R accountRegister(@RequestBody UserInfo userInfo){
 
         return authService.accountRegister(userInfo);
     }

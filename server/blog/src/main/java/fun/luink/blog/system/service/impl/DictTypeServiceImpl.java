@@ -1,6 +1,6 @@
 package fun.luink.blog.system.service.impl;
 
-import fun.luink.blog.common.model.ResultObj;
+import fun.luink.blog.common.model.R;
 import fun.luink.blog.model.DictType;
 import fun.luink.blog.system.repository.DictTypeRepository;
 import fun.luink.blog.system.service.DictTypeService;
@@ -17,30 +17,30 @@ public class DictTypeServiceImpl implements DictTypeService {
   DictTypeRepository dictTypeRepository;
 
   @Override
-  public ResultObj getDictType(String id) {
-    return ResultObj.success(dictTypeRepository.findById(id));
+  public R getDictType(String id) {
+    return R.success(dictTypeRepository.findById(id));
   }
 
   @Override
-  public ResultObj addDictType(DictType dictType) {
+  public R addDictType(DictType dictType) {
     DictType save = dictTypeRepository.insert(dictType);
-    return ResultObj.success(save);
+    return R.success(save);
   }
 
   @Override
-  public ResultObj updateDictType(DictType dictType) {
+  public R updateDictType(DictType dictType) {
     DictType save = dictTypeRepository.save(dictType);
-    return ResultObj.success(save);
+    return R.success(save);
   }
 
   @Override
-  public ResultObj delDictType(List<String> ids) {
+  public R delDictType(List<String> ids) {
     dictTypeRepository.deleteAllById(ids);
-    return ResultObj.success();
+    return R.success();
   }
 
   @Override
-  public ResultObj getDictTypeList(DictType dictType) {
-    return ResultObj.success(dictTypeRepository.findAll(Example.of(dictType)));
+  public R getDictTypeList(DictType dictType) {
+    return R.success(dictTypeRepository.findAll(Example.of(dictType)));
   }
 }

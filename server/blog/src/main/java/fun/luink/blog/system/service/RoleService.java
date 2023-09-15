@@ -1,6 +1,6 @@
 package fun.luink.blog.system.service;
 
-import fun.luink.blog.common.model.ResultObj;
+import fun.luink.blog.common.model.R;
 import fun.luink.blog.model.Role;
 
 public interface RoleService {
@@ -10,7 +10,7 @@ public interface RoleService {
      * @param role
      * @return
      */
-    ResultObj addRole(Role role);
+    R addRole(Role role);
 
 
 }

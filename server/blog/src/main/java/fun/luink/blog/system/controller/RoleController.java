@@ -1,6 +1,6 @@
 package fun.luink.blog.system.controller;
 
-import fun.luink.blog.common.model.ResultObj;
+import fun.luink.blog.common.model.R;
 import fun.luink.blog.model.Role;
 import fun.luink.blog.system.service.RoleService;
 import io.swagger.v3.oas.annotations.Operation;
@@ -24,9 +24,9 @@ public class RoleController {
      */
     @PostMapping("/getRoles")
     @Operation(summary = "获取角色列表",description = "获取角色列表")
-    public ResultObj accountLogin(){
+    public R accountLogin(){
 
-        return ResultObj.success("reoreo");
+        return R.success("reoreo");
     }
 
     /**
@@ -34,7 +34,7 @@ public class RoleController {
      * @return
      */
     @PostMapping("/addRole")
-    public ResultObj accountLogin(@RequestBody Role role){
+    public R accountLogin(@RequestBody Role role){
         //添加角色
         return roleService.addRole(role);
     }

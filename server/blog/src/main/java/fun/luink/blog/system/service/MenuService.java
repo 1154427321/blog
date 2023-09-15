@@ -1,18 +1,18 @@
 package fun.luink.blog.system.service;
 
-import fun.luink.blog.common.model.ResultObj;
+import fun.luink.blog.common.model.R;
 import fun.luink.blog.model.Menu;
 import java.lang.String;
 import java.util.List;
 
 public interface MenuService {
-  ResultObj getMenu(String id);
+  R getMenu(String id);
 
-  ResultObj addMenu(Menu menu);
+  R addMenu(Menu menu);
 
-  ResultObj updateMenu(Menu menu);
+  R updateMenu(Menu menu);
 
-  ResultObj delMenu(List<String> menu);
+  R delMenu(List<String> menu);
 
-  ResultObj getMenuList(Menu menu);
+  R getMenuList(Menu menu);
 }

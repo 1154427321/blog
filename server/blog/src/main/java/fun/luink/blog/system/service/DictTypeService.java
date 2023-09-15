@@ -1,18 +1,18 @@
 package fun.luink.blog.system.service;
 
-import fun.luink.blog.common.model.ResultObj;
+import fun.luink.blog.common.model.R;
 import fun.luink.blog.model.DictType;
 import java.lang.String;
 import java.util.List;
 
 public interface DictTypeService {
-  ResultObj getDictType(String id);
+  R getDictType(String id);
 
-  ResultObj addDictType(DictType dictType);
+  R addDictType(DictType dictType);
 
-  ResultObj updateDictType(DictType dictType);
+  R updateDictType(DictType dictType);
 
-  ResultObj delDictType(List<String> dictType);
+  R delDictType(List<String> dictType);
 
-  ResultObj getDictTypeList(DictType dictType);
+  R getDictTypeList(DictType dictType);
 }

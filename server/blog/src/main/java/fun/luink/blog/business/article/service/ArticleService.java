@@ -1,18 +1,18 @@
 package fun.luink.blog.business.article.service;
 
-import fun.luink.blog.common.model.ResultObj;
+import fun.luink.blog.common.model.R;
 import fun.luink.blog.model.Article;
 import java.lang.String;
 import java.util.List;
 
 public interface ArticleService {
-  ResultObj getArticle(String id);
+  R getArticle(String id);
 
-  ResultObj addArticle(Article article);
+  R addArticle(Article article);
 
-  ResultObj updateArticle(Article article);
+  R updateArticle(Article article);
 
-  ResultObj delArticle(List<String> article);
+  R delArticle(List<String> article);
 
-  ResultObj getArticleList(Article article);
+  R getArticleList(Article article);
 }

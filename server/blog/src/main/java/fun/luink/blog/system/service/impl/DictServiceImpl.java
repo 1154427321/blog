@@ -1,6 +1,6 @@
 package fun.luink.blog.system.service.impl;
 
-import fun.luink.blog.common.model.ResultObj;
+import fun.luink.blog.common.model.R;
 import fun.luink.blog.model.Dict;
 import fun.luink.blog.system.repository.DictRepository;
 import fun.luink.blog.system.service.DictService;
@@ -18,30 +18,30 @@ public class DictServiceImpl implements DictService {
   DictRepository dictRepository;
 
   @Override
-  public ResultObj getDict(String id) {
-    return ResultObj.success(dictRepository.findById(id));
+  public R getDict(String id) {
+    return R.success(dictRepository.findById(id));
   }
 
   @Override
-  public ResultObj addDict(Dict dict) {
+  public R addDict(Dict dict) {
     Dict save = dictRepository.insert(dict);
-    return ResultObj.success(save);
+    return R.success(save);
   }
 
   @Override
-  public ResultObj updateDict(Dict dict) {
+  public R updateDict(Dict dict) {
     Dict save = dictRepository.save(dict);
-    return ResultObj.success(save);
+    return R.success(save);
   }
 
   @Override
-  public ResultObj delDict(List<String> ids) {
+  public R delDict(List<String> ids) {
     dictRepository.deleteAllById(ids);
-    return ResultObj.success();
+    return R.success();
   }
 
   @Override
-  public ResultObj getDictList(Dict dict) {
-    return ResultObj.success(dictRepository.findAll(Example.of(dict)));
+  public R getDictList(Dict dict) {
+    return R.success(dictRepository.findAll(Example.of(dict)));
   }
 }

@@ -1,6 +1,6 @@
 package fun.luink.blog.system.controller;
 
-import fun.luink.blog.common.model.ResultObj;
+import fun.luink.blog.common.model.R;
 import fun.luink.blog.model.Menu;
 import fun.luink.blog.system.service.MenuService;
 import java.lang.String;
@@ -26,31 +26,31 @@ public class MenuController {
 
   @GetMapping("/getMenu/{id}")
   @Operation(summary = "获取菜单", description = "获取菜单")
-  public ResultObj getMenu(@PathVariable("id") String id) {
+  public R getMenu(@PathVariable("id") String id) {
     return menuService.getMenu(id);
   }
 
   @PutMapping("/addMenu")
   @Operation(summary = "添加菜单", description = "添加菜单")
-  public ResultObj addMenu(Menu menu) {
+  public R addMenu(Menu menu) {
     return menuService.addMenu(menu);
   }
 
   @PutMapping("/updateMenu")
   @Operation(summary = "更新菜单", description = "更新菜单")
-  public ResultObj updateMenu(Menu menu) {
+  public R updateMenu(Menu menu) {
     return menuService.updateMenu(menu);
   }
 
   @DeleteMapping("/delMenu")
   @Operation(summary = "删除菜单", description = "删除菜单")
-  public ResultObj delMenu(List<String> menu) {
+  public R delMenu(List<String> menu) {
     return menuService.delMenu(menu);
   }
 
   @PostMapping("/getMenuList")
   @Operation(summary = "获取菜单列表", description = "获取菜单列表")
-  public ResultObj getMenuList(Menu menu) {
+  public R getMenuList(Menu menu) {
     return menuService.getMenuList(menu);
   }
 }

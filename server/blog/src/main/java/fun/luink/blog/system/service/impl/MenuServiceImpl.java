@@ -1,6 +1,6 @@
 package fun.luink.blog.system.service.impl;
 
-import fun.luink.blog.common.model.ResultObj;
+import fun.luink.blog.common.model.R;
 import fun.luink.blog.model.Menu;
 import fun.luink.blog.system.repository.MenuRepository;
 import fun.luink.blog.system.service.MenuService;
@@ -17,30 +17,30 @@ public class MenuServiceImpl implements MenuService {
   MenuRepository menuRepository;
 
   @Override
-  public ResultObj getMenu(String id) {
-    return ResultObj.success(menuRepository.findById(id));
+  public R getMenu(String id) {
+    return R.success(menuRepository.findById(id));
   }
 
   @Override
-  public ResultObj addMenu(Menu menu) {
+  public R addMenu(Menu menu) {
     Menu save = menuRepository.insert(menu);
-    return ResultObj.success(save);
+    return R.success(save);
   }
 
   @Override
-  public ResultObj updateMenu(Menu menu) {
+  public R updateMenu(Menu menu) {
     Menu save = menuRepository.save(menu);
-    return ResultObj.success(save);
+    return R.success(save);
   }
 
   @Override
-  public ResultObj delMenu(List<String> ids) {
+  public R delMenu(List<String> ids) {
     menuRepository.deleteAllById(ids);
-    return ResultObj.success();
+    return R.success();
   }
 
   @Override
-  public ResultObj getMenuList(Menu menu) {
-    return ResultObj.success(menuRepository.findAll(Example.of(menu)));
+  public R getMenuList(Menu menu) {
+    return R.success(menuRepository.findAll(Example.of(menu)));
   }
 }
