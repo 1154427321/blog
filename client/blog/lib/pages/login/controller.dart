@@ -30,7 +30,6 @@ class LoginController extends GetxController {
 
   //登录方法
   Future<String?> authUser(LoginData data) async {
-    print(data);
     UserProfile? profile = await UserApi.login(
         UserLoginReq(
             account: data.name,
@@ -47,7 +46,6 @@ class LoginController extends GetxController {
 
   //注册方法
   Future<String?> register(SignupData data) async {
-    print(data);
     UserProfile? profile = await UserApi.register(
         UserLoginReq(
             account: data.name,

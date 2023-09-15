@@ -14,7 +14,7 @@ class UserApi {
   }
 
 
-  /// 登录
+  /// 注册
   static Future<UserProfile?> register(UserLoginReq? req) async {
     var res = await ApiService.inject.post(
       '/auth/accountRegister',
